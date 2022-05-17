@@ -16,6 +16,8 @@ public class Remitente extends Entity<RemitenteId> {
         this.contacto = contacto;
     }
 
-    public void actualizarContacto(){
+    public void actualizarContacto(Nombre nombre, Contacto contacto){
+        this.nombre = nombre;
+        this.contacto = contacto;
     }
 }
