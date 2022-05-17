@@ -1,4 +1,4 @@
-package co.com.sofka.transporte.envio;
+package co.com.sofka.transporte.envio.values;
 
 import co.com.sofka.domain.generic.Identity;
 

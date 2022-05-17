@@ -1,6 +1,9 @@
 package co.com.sofka.transporte.envio;
 
 import co.com.sofka.domain.generic.Entity;
+import co.com.sofka.transporte.envio.values.Contacto;
+import co.com.sofka.transporte.envio.values.DestinatarioId;
+import co.com.sofka.transporte.envio.values.Nombre;
 
 public class Destinatario extends Entity<DestinatarioId> {
 
