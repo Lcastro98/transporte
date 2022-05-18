@@ -1,6 +1,7 @@
 package co.com.sofka.transporte.mensajero.value;
 
 import co.com.sofka.domain.generic.AggregateEvent;
+import co.com.sofka.transporte.mensajero.event.MantenimientoAgregado;
 import co.com.sofka.transporte.mensajero.event.RecorridoCreado;
 import co.com.sofka.transporte.mensajero.event.ContactoCreado;
 
@@ -22,5 +23,10 @@ public class Contacto extends AggregateEvent<ContactoId> {
 
     public void agregarRecorrido (Ciudad ciudad, Direccion direccion){
         appendChange(new RecorridoCreado(nombre, cuidad, direccion)).apply();
+    }
+
+    public void agragarMantenimiento (Nombre nombre, MedioTransporte medioTransporte){
+        appendChange(new MantenimientoAgregado(nombre, medioTransporte)).apply();
+
     }
 }

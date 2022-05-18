@@ -2,6 +2,7 @@ package co.com.sofka.transporte.mensajero.value;
 
 import co.com.sofka.domain.generic.EventChange;
 import co.com.sofka.transporte.mensajero.event.ContactoCreado;
+import co.com.sofka.transporte.mensajero.event.MantenimientoAgregado;
 
 import java.util.HashSet;
 
@@ -16,6 +17,11 @@ public class ContactoEventChange extends EventChange {
         });
 
         apply((ContactoCreado event)-> {
+            var envio = new Envio();
+            contacto.envio.add(envio);
+        });
+
+        apply((MantenimientoAgregado event)->{
             var envio = new Envio();
             contacto.envio.add(envio);
         });
