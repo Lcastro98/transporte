@@ -2,12 +2,11 @@ package co.com.sofka.transporte.envio;
 
 import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofka.domain.generic.DomainEvent;
+import co.com.sofka.transporte.envio.events.DestinatarioActualizado;
 import co.com.sofka.transporte.envio.events.DestinoAgregado;
 import co.com.sofka.transporte.envio.events.EnvioCreado;
-import co.com.sofka.transporte.envio.values.Destino;
-import co.com.sofka.transporte.envio.values.EnvioId;
-import co.com.sofka.transporte.envio.values.EstadoEnvio;
-import co.com.sofka.transporte.envio.values.ValorComercial;
+import co.com.sofka.transporte.envio.events.RemitenteActualizado;
+import co.com.sofka.transporte.envio.values.*;
 
 import java.util.List;
 
@@ -43,5 +42,13 @@ public class Envio extends AggregateEvent<EnvioId>{
 
     public void asignarDestino(){
         appendChange(new DestinoAgregado(Destino.Destinos.DIRECCION)).apply();
+    }
+
+    public void actualizarContactoRemitente(Nombre nombre, Contacto contacto){
+        appendChange(new RemitenteActualizado(nombre, contacto)).apply();
+    }
+
+    public void actualizarContactoDestinatario(Nombre nombre, Contacto contacto){
+        appendChange(new DestinatarioActualizado(nombre, contacto)).apply();
     }
 }
