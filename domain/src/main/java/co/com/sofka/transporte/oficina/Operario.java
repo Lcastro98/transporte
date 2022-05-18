@@ -1,23 +1,24 @@
 package co.com.sofka.transporte.oficina;
 
 import co.com.sofka.domain.generic.Entity;
+import co.com.sofka.transporte.oficina.values.*;
 
 public class Operario extends Entity<OperarioId>{
 
-    protected Nombre nombre;
-    protected Contacto contacto;
+    protected NombreGo nombreGo;
+    protected ContactoGo contactoGo;
     protected Antiguedad antiguedad;
 
-    public Operario(OperarioId entityId, Nombre nombre, Contacto contacto, Antiguedad antiguedad){
+    public Operario(OperarioId entityId, NombreGo nombreGo, ContactoGo contactoGo, Antiguedad antiguedad){
         super(entityId);
-        this.nombre = nombre;
-        this.contacto = contacto;
+        this.nombreGo = nombreGo;
+        this.contactoGo = contactoGo;
         this.antiguedad = antiguedad;
     }
     
-    public void actualizarContacto(Nombre nombre, Contacto contacto, Antiguedad antiguedad){
-        this.nombre = nombre;
-        this.contacto = contacto;
+    public void actualizarContacto(NombreGo nombreGo, ContactoGo contactoGo, Antiguedad antiguedad){
+        this.nombreGo = nombreGo;
+        this.contactoGo = contactoGo;
         this.antiguedad = antiguedad;
     }
 }

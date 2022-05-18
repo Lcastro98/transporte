@@ -1,23 +1,24 @@
 package co.com.sofka.transporte.oficina;
 
 import co.com.sofka.domain.generic.Entity;
+import co.com.sofka.transporte.oficina.values.*;
 
 public class Gerente extends Entity<GerenteId>{
     
-    protected Nombre nombre;
-    protected Contacto contacto;
+    protected NombreGo nombreGo;
+    protected ContactoGo contactoGo;
     protected Salario salario;
 
-    public Gerente(GerenteId entityId, Nombre nombre, Contacto contacto, Salario salario){
+    public Gerente(GerenteId entityId, NombreGo nombreGo, ContactoGo contactoGo, Salario salario){
         super(entityId);
-        this.nombre = nombre;
-        this.contacto = contacto;
+        this.nombreGo = nombreGo;
+        this.contactoGo = contactoGo;
         this.salario = salario;
     }
 
-    public void actualizarContacto(Nombre nombre, Contacto contacto, Salario salario){
-        this.nombre = nombre;
-        this.contacto = contacto;
+    public void actualizarContacto(NombreGo nombreGo, ContactoGo contactoGo, Salario salario){
+        this.nombreGo = nombreGo;
+        this.contactoGo = contactoGo;
         this.salario = salario;
     }
 }
