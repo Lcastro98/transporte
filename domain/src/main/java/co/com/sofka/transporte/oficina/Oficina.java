@@ -2,6 +2,7 @@ package co.com.sofka.transporte.oficina;
 
 import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofka.domain.generic.DomainEvent;
+import co.com.sofka.transporte.oficina.events.OficinaCreada;
 
 import java.util.List;
 

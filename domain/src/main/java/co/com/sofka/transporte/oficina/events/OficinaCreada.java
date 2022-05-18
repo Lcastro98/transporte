@@ -1,11 +1,12 @@
-package co.com.sofka.transporte.oficina;
+package co.com.sofka.transporte.oficina.events;
 
 import co.com.sofka.domain.generic.DomainEvent;
-import co.com.sofka.transporte.oficina.Nombre;
-import co.com.sofka.transporte.oficina.Ubicacion;
 import co.com.sofka.transporte.oficina.Contacto;
 import co.com.sofka.transporte.oficina.Gerente;
+import co.com.sofka.transporte.oficina.Nombre;
 import co.com.sofka.transporte.oficina.Operario;
+import co.com.sofka.transporte.oficina.Ubicacion;
+
 
 public class OficinaCreada extends DomainEvent{
     private final Nombre nombre;
