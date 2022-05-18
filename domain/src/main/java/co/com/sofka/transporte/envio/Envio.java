@@ -10,7 +10,7 @@ import co.com.sofka.transporte.envio.values.*;
 
 import java.util.List;
 
-public class Envio extends AggregateEvent<EnvioId>{
+public class Envio extends AggregateEvent<EnvioId> {
     protected Remitente remitente;
     protected Destinatario destinatario;
     protected Paquete paquete;
@@ -35,20 +35,44 @@ public class Envio extends AggregateEvent<EnvioId>{
         return envio;
     }
 
-    public EstadoEnvio seguirEnvio(EnvioId envioId){
+    public EstadoEnvio seguirEnvio(EnvioId envioId) {
         var estado = this.estadoEnvio;
         return estado;
     }
 
-    public void asignarDestino(){
+    public void asignarDestino() {
         appendChange(new DestinoAgregado(Destino.Destinos.DIRECCION)).apply();
     }
 
-    public void actualizarContactoRemitente(Nombre nombre, Contacto contacto){
+    public void actualizarContactoRemitente(Nombre nombre, Contacto contacto) {
         appendChange(new RemitenteActualizado(nombre, contacto)).apply();
     }
 
-    public void actualizarContactoDestinatario(Nombre nombre, Contacto contacto){
+    public void actualizarContactoDestinatario(Nombre nombre, Contacto contacto) {
         appendChange(new DestinatarioActualizado(nombre, contacto)).apply();
+    }
+
+    public Remitente Remitente() {
+        return remitente;
+    }
+
+    public Destinatario Destinatario() {
+        return destinatario;
+    }
+
+    public Paquete Paquete() {
+        return paquete;
+    }
+
+    public ValorComercial Valor() {
+        return valor;
+    }
+
+    public EstadoEnvio EstadoEnvio() {
+        return estadoEnvio;
+    }
+
+    public Destino.Destinos Destino() {
+        return destino;
     }
 }

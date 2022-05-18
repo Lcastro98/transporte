@@ -13,7 +13,7 @@ public class ValorComercial implements ValueObject<String> {
         this.moneda = Objects.requireNonNull(moneda);
         this.monto = Objects.requireNonNull(monto);
 
-        if(this.monto < 0){
+        if (this.monto < 0) {
             throw new IllegalArgumentException("Debe ingresar un monto correcto");
         }
     }

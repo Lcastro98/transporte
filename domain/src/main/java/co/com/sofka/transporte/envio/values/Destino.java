@@ -12,7 +12,7 @@ public class Destino implements ValueObject<Destino.Destinos> {
         this.value = Objects.requireNonNull(value);
     }
 
-    public enum Destinos{
+    public enum Destinos {
         OFICINA, DIRECCION
     }
 

@@ -10,7 +10,7 @@ public class Contenido implements ValueObject<String> {
 
     public Contenido(String valor) {
         this.valor = Objects.requireNonNull(valor);
-        if(this.valor.isBlank()){
+        if (this.valor.isBlank()) {
             throw new IllegalArgumentException("Por favor ingresar la descripcion del contenido del paquete");
         }
     }

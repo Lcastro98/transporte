@@ -34,8 +34,10 @@ public class Nombre implements ValueObject<Nombre.Props> {
             }
         };
     }
+
     public interface Props {
         String nombre();
+
         String apellido();
     }
 }

@@ -16,7 +16,7 @@ public class Destinatario extends Entity<DestinatarioId> {
         this.contacto = contacto;
     }
 
-    public void actualizarContacto(Nombre nombre, Contacto contacto){
+    public void actualizarContacto(Nombre nombre, Contacto contacto) {
         this.nombre = nombre;
         this.contacto = contacto;
     }

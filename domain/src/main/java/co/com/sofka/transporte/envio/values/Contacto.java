@@ -44,7 +44,9 @@ public class Contacto implements ValueObject<Contacto.Props> {
 
     public interface Props {
         String ciudad();
+
         String direccion();
+
         String telefono();
     }
 }

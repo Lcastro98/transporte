@@ -13,7 +13,7 @@ public class Peso implements ValueObject<String> {
         this.unidadMedida = Objects.requireNonNull(unidadMedida);
         this.valor = Objects.requireNonNull(valor);
 
-        if (this.valor < 0 ){
+        if (this.valor < 0) {
             throw new IllegalArgumentException("El peso ingresado no es correcto.");
         }
     }

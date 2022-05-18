@@ -8,6 +8,7 @@ public class DestinatarioActualizado extends DomainEvent {
 
     private final Nombre nombre;
     private final Contacto contacto;
+
     public DestinatarioActualizado(Nombre nombre, Contacto contacto) {
         super("co.com.sofka.transporte.DestinatarioActualizado");
         this.nombre = nombre;

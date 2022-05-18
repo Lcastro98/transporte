@@ -12,7 +12,7 @@ public class EstadoEnvio implements ValueObject<EstadoEnvio.Estados> {
         this.value = Objects.requireNonNull(value);
     }
 
-    public enum Estados{
+    public enum Estados {
         ADMITIDO, ENBODEGA, ENTRANSITO, ENTREGADO
     }
 
