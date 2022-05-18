@@ -17,7 +17,7 @@ public class Envio extends AggregateEvent<EnvioId>{
     protected Paquete paquete;
     protected ValorComercial valor;
     protected EstadoEnvio estadoEnvio;
-    protected Destino destino;
+    protected Destino.Destinos destino;
 
     public Envio(EnvioId entityId, Remitente remitente, Destinatario destinatario, Paquete paquete, ValorComercial valor) {
         super(entityId);
