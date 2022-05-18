@@ -15,6 +15,9 @@ public class Gerente extends Entity<GerenteId>{
         this.salario = salario;
     }
 
-    public void actualizarContacto(){
+    public void actualizarContacto(Nombre nombre, Contacto contacto, Salario salario){
+        this.nombre = nombre;
+        this.contacto = contacto;
+        this.salario = salario;
     }
 }

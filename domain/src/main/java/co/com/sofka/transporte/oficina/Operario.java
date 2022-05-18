@@ -15,6 +15,9 @@ public class Operario extends Entity<OperarioId>{
         this.antiguedad = antiguedad;
     }
     
-    public void actualizarContacto(){
+    public void actualizarContacto(Nombre nombre, Contacto contacto, Antiguedad antiguedad){
+        this.nombre = nombre;
+        this.contacto = contacto;
+        this.antiguedad = antiguedad;
     }
 }
