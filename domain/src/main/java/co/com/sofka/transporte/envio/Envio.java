@@ -9,6 +9,7 @@ import co.com.sofka.transporte.envio.events.RemitenteActualizado;
 import co.com.sofka.transporte.envio.values.*;
 
 import java.util.List;
+import java.util.Objects;
 
 public class Envio extends AggregateEvent<EnvioId> {
     protected Remitente remitente;
@@ -45,10 +46,14 @@ public class Envio extends AggregateEvent<EnvioId> {
     }
 
     public void actualizarContactoRemitente(Nombre nombre, Contacto contacto) {
+        Objects.requireNonNull(nombre);
+        Objects.requireNonNull(contacto);
         appendChange(new RemitenteActualizado(nombre, contacto)).apply();
     }
 
     public void actualizarContactoDestinatario(Nombre nombre, Contacto contacto) {
+        Objects.requireNonNull(nombre);
+        Objects.requireNonNull(contacto);
         appendChange(new DestinatarioActualizado(nombre, contacto)).apply();
     }
 

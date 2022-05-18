@@ -18,14 +18,6 @@ public class Peso implements ValueObject<String> {
         }
     }
 
-    public String getUnidadMedida() {
-        return unidadMedida;
-    }
-
-    public Double getValor() {
-        return valor;
-    }
-
     @Override
     public String value() {
         return valor + unidadMedida;

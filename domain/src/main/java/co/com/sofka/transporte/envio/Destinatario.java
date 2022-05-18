@@ -5,6 +5,8 @@ import co.com.sofka.transporte.envio.values.Contacto;
 import co.com.sofka.transporte.envio.values.DestinatarioId;
 import co.com.sofka.transporte.envio.values.Nombre;
 
+import java.util.Objects;
+
 public class Destinatario extends Entity<DestinatarioId> {
 
     protected Nombre nombre;
@@ -17,7 +19,7 @@ public class Destinatario extends Entity<DestinatarioId> {
     }
 
     public void actualizarContacto(Nombre nombre, Contacto contacto) {
-        this.nombre = nombre;
-        this.contacto = contacto;
+        this.nombre = Objects.requireNonNull(nombre);
+        this.contacto = Objects.requireNonNull(contacto);
     }
 }
