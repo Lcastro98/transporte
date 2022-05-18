@@ -1,23 +1,31 @@
 package co.com.sofka.transporte.oficina;
 
 import co.com.sofka.domain.generic.AggregateEvent;
+import co.com.sofka.domain.generic.DomainEvent;
+
+import java.util.List;
 
 public class Oficina extends AggregateEvent<OficinaId> {
 
-    protected final OficinaId oficinaId;
-    protected final Nombre nombre;
-    protected final Ubicacion ubicacion;
-    protected final Contacto contacto;
-    protected final Gerente gerente;
-    protected final Operario operario;
+    protected OficinaId oficinaId;
+    protected Nombre nombre;
+    protected Ubicacion ubicacion;
+    protected Contacto contacto;
+    protected Gerente gerente;
+    protected Operario operario;
 
     public Oficina(OficinaId entityId, OficinaId oficinaId, Nombre nombre, Ubicacion ubicacion, Contacto contacto, Gerente gerente, Operario operario){
         super(entityId);
-        this.oficinaId = oficinaId;
-        this.nombre = nombre;
-        this.ubicacion = ubicacion;
-        this.contacto = contacto;
-        this.gerente = gerente;
-        this.operario = operario;
+        appendChange(new OficinaCreada(nombre, ubicacion, contacto, gerente, operario)).apply();
+        subscribe(new OficinaEventChange(this));
+    }
+    private Oficina(OficinaId entityId){
+        super(entityId);
+        subscribe(new OficinaEventChange(this));
+    }
+    public static Oficina from(OficinaId entityId, List<DomainEvent> events){
+        var oficina = new  Oficina(entityId);
+        events.forEach(oficina::applyEvent);
+        return oficina;
     }
 }
