@@ -1,7 +1,7 @@
 package co.com.sofka.transporte.envio.events;
 
 import co.com.sofka.domain.generic.DomainEvent;
-import co.com.sofka.transporte.envio.Destino;
+import co.com.sofka.transporte.envio.values.Destino;
 
 public class DestinoAgregado extends DomainEvent {
 
